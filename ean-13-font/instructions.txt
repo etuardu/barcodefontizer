@@ -1,0 +1,61 @@
+This is a copy of the font description available at the following url:
+https://fontstruct.com/fontstructions/show/732961/ean_13_17
+
+--
+
+This font can be used to create an EAN-13 barcode which is a superset of the
+UPC-A barcode.
+
+How to use
+
+EAN-13 has 3 symbol sets A, B, and C. It looks like the following:
+
+*XXXXXX#CCCCCC*
+
+* start/end bar (as common for Code 39)
+# middle bar
+X a symbol of set A or B (see below)
+C a symbol of set C
+
+Symbol sets
+
+The symbol sets are placed on an international keyboard layout:
+
+Number row: 1234567890
+Middle character row: asdfghjkl;
+Top character row: qwertyuiop
+
+The first digit of an EAN-13 barcode does not directly correspond to a symbol.
+It determines which symbol set for the following 6 digits is to be used.
+The following listing shows the symbol set combinations for the starting digits:
+
+AABABB
+AABBAB
+AABBBA
+ABAABB
+ABBAAB
+ABBBAA
+ABABAB
+ABABBA
+ABBABA
+
+If the starting digit is 0, or if you want to encode a UPC-A, only use symbol
+set A.
+
+Examples
+
+The spaces are only inserted for clarity.
+
+EAN number → symbol set → What you type with the font
+2 012345 67890 3 → *AABBAB#CCCCCC* → *01sd4g#yuiope*
+2 230154 67890 1 → *AABBAB#CCCCCC* → *23;a5f#yuiopq*
+9 786789 12345 1 → *ABBABA#CCCCCC* → *7kh7k9#qwertq*
+9 789876 12345 7 → *ABBABA#CCCCCC* → *7kl8j6#qwertu*
+
+The above examples contain all symbols, try them.
+
+Standard
+
+For detailed technical information download the GS1 General Specifications.
+
+If you need other barcode fonts, just check my other FontStructions
